@@ -13,6 +13,16 @@ We used an ad-hoc modified version of the HaGRID dataset. It includes 552.992 Fu
 
 <h2>Application structure</h2>
 <img src=/imgs/application.png>
+The processing pipeline is composed of three stages:
+
+Image acquisition and preprocessing: The purpose of this stage is to fetch the frame from the camera and adapt the image for the neural network. The blocks involved in this stage are visualized in orange on the left of Figure 2.1.
+
+CNN inference: This stage (corresponding to the yellow CNN block) performs the inference of the neural network on the rescaled input image, producing an output vector of 18 elements (y_0, …, y_17), corresponding to the number of different categories of gestures present in the training set.
+
+Post-processing subsystem: The purpose of this stage is to select the gesture recognized by the network based on all the confidence scores and reduce possible fluctuations in the outputs produced by the network on a sequence of input images. The blocks involved in this stage are the ones included in the purple box. 
+
+Notice that in GPU-accelerated systems, like the one used in this project, the only part that benefits from hardware acceleration is the CNN inference. Using heterogeneous platforms with FPGAs it is also possible to accelerate the preprocessing step and the filtering system, by implementing dedicated hardware devices in programmable logic. However, FPGA acceleration introduces several complications in the deployment of a neural network that are out of the scope of this document.
+
 
 
 -----
