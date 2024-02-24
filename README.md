@@ -15,5 +15,5 @@ We used an ad-hoc modified version of the HaGRID dataset. It includes 552.992 Fu
 
 -----
 
-<h2>Communication channel</h2>
+<h2>Communication channel - Packet structure</h2>
 <img src=/imgs/hagrid_gestures.png>
