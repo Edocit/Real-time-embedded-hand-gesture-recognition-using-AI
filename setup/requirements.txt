@@ -1,0 +1,14 @@
+
+
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch
+torchvision
+torchaudio
+
+opencv-python
+pillow
+numpy
+mediapipe
+keyboard 
+pandas
+tqdm

@@ -1,0 +1,34 @@
+
+------------------------------------------------------------------------------------------------------------------------------------------
+BEFORE START
+
+Make sure that the computer on which you want to run the code 
+has a cuda version installed that is no lower than 11.8
+
+You can find installation guide at this link
+https://developer.nvidia.com/cuda-11-8-0-download-archive 
+------------------------------------------------------------------------------------------------------------------------------------------
+STRUCTURE
+
+Top level 
+directory------| 
+               |---Code       --> i codici e i modelli delle reti allenate
+               |
+               |---Video      --> video raw di alcune inferenze
+               |
+               |---Recordings --> cartella dove vengono salvate le registrazioni delle demo eseguite da webcam
+               |
+               |---Setup      --> istruzioni per configurare la macchina, gli ambienti di lavoro ed i comandi per eseguire il codice
+------------------------------------------------------------------------------------------------------------------------------------------
+
+1) Create a virtual environment using the command:    python3 -m venv leonardo_env
+2) Activate the environment using the command:        source leonardo_env/bin/activate
+3) Install the requirements using the command:	      pip install -r setup/requirements.txt
+4) Change dicrectory using the command:		      cd ../code/
+
+5) run the code using the command:		      python3 HaGRID+Mediapipe.py resnet50 80 recorded_video.avi
+        IMPORTANT:
+                    First  parameter    : the chosen neural network: can be resnet50, mobilenetv3, inceptionv3
+                    Second parameter    : the threshold score expressed in the range [0, 100]
+                    Thrid  parameter    : the name for the recorded video saved in the "recordings" directory
+------------------------------------------------------------------------------------------------------------------------------------------
