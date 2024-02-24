@@ -18,7 +18,7 @@ The processing pipeline is composed of three stages:
 
 3) **Post-processing subsystem**: The purpose of this stage is to select the gesture recognized by the network based on all the confidence scores and reduce possible fluctuations in the outputs produced by the network on a sequence of input images. The blocks involved in this stage are the ones included in the purple box. 
 
-_Notice that in GPU-accelerated systems, like the one used in this project, the only part that benefits from hardware acceleration is the CNN inference. Using heterogeneous platforms with FPGAs it is also possible to accelerate the preprocessing step and the filtering system, by implementing dedicated hardware devices in programmable logic. However, FPGA acceleration introduces several complications in the deployment of a neural network that are out of the scope of this document._
+_Notice that in GPU-accelerated systems, like the one used in this project, the only part that benefits from hardware acceleration is the CNN inference. Using heterogeneous platforms with FPGAs it is also possible to accelerate the preprocessing step and the filtering system, by implementing dedicated hardware devices in programmable logic._
 
 
 
