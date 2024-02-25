@@ -79,19 +79,18 @@ python3 application.py resnet50 80 recorded_video.avi $SERIAL
 
 Each step is better explained below:
 
-1) Clone this repo
-2) Make sure that the computer on which you want to run the code 
-has a cuda version installed that is no lower than 11.8
+&emsp; 1) Clone this repo
+&emsp; 2) Make sure that the computer on which you want to run the code has a cuda version installed that is no lower than 11.8
 
 You can find installation guide <a href="https://developer.nvidia.com/cuda-11-8-0-download-archive">here</a>. 
 
-3) Create a virtual environment using the command:    python3 -m venv rtai_env
-4) Activate the environment using the command:        source rtai_env/bin/activate
-5) Install the requirements using the command:	       pip install -r setup/requirements.txt
-6) Change dicrectory using the command:		             cd ../code/
-7) If using Linux grant permissions to the serial port using the command :  sudo chmod 777 /dev/ttyUSB@ -> **Please be sure to replace "@"** with the number of the desired serial
+&emsp; 3) Create a virtual environment using the command:    python3 -m venv rtai_env
+&emsp; 4) Activate the environment using the command:        source rtai_env/bin/activate
+&emsp; 5) Install the requirements using the command:	       pip install -r setup/requirements.txt
+&emsp; 6) Change dicrectory using the command:		             cd ../code/
+&emsp; 7) If using Linux grant permissions to the serial port using the command :  sudo chmod 777 /dev/ttyUSB@ -> **Please be sure to replace "@"** with the number of the desired serial
    
-8) Run the code using the command:		      python3 application.py resnet50 80 recorded_video.avi /dev/ttyUSB@
+&emsp; 8) Run the code using the command:		      python3 application.py resnet50 80 recorded_video.avi /dev/ttyUSB@
    <br  /> <br  />
         &emsp; **IMPORTANT**<br  /> <br  />
                  &emsp; &emsp; &emsp; &emsp;  **First  parameter**    : the chosen neural network: can be resnet50, mobilenetv3, inceptionv3 <br  />
