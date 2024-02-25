@@ -3,8 +3,10 @@
 
  This project provides a real-time implementation of three neural networks used to detect 18 different hand gestures
 
+
+
 <p align="center">
- <img align="center" width="400" src=/imgs/demo.gif>
+ <img align="center" width="700" src=/imgs/demo.gif>
 </p>
 
 
