@@ -76,7 +76,6 @@ pip install -r setup/requirements.txt
 cd ../code/
 sudo chmod 777 /dev/ttyUSB@ #-> **Please be sure to replace "@"** with the number of the desired serial
 python3 application.py resnet50 80 recorded_video.avi /dev/ttyUSB@ #-> **Please be sure to replace "@"** with the number of the desired serial
-puts markdown.to_html
 ```
 
 
