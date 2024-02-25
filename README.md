@@ -93,6 +93,6 @@ Each step is better explained below:
                  &emsp; &emsp; &emsp; &emsp;  **First  parameter**    : the chosen neural network: can be resnet50, mobilenetv3, inceptionv3 <br  />
                  &emsp; &emsp; &emsp; &emsp;  **Second parameter**    : the threshold score expressed in the range [0, 100] <br  />
                  &emsp; &emsp; &emsp; &emsp;  **Thrid  parameter**    : the name for the recorded video saved in the "recordings" directory <br  />
-                 &emsp; &emsp; &emsp; &emsp;  **Fourth parameter**    : the serial port desierd for the communication. **Be sure to replace "@"** with the desired serial number
+                 &emsp; &emsp; &emsp; &emsp;  **Fourth parameter**    : the serial port desierd for the communication. **Replace "@"** with the desired serial number
 
 
