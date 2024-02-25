@@ -4,7 +4,7 @@
  This project provides a real-time implementation of three neural networks used to detect 18 different hand gestures
 
 
-<img align="center" src=/imgs/demo.gif>
+<img align="center" width="400" src=/imgs/demo.gif>
 One additional "No gesture" class is added in the application to consistently handle uncertain positions or transition frames between different gestures 
 
 <h2>Dataset</h2>
