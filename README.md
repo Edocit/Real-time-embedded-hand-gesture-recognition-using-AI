@@ -37,7 +37,7 @@ _Notice that in GPU-accelerated systems, like the one used in this project, the 
 
 The application includes the possibility to enable different PHY communication channels, including **serial ports** supporting the **RS-232** standard. The transmission mode of the serial port is **fully configurable**, however, the default setting is 8N1 (8 bit of data, no parity, and one stop bit). The data frame generated and transmitted by the application, shown bleow, consists in two bytes:
 1) **Detected class**: The class detected by the neural network. It is expressed as a byte.
-2) **Timing frame**: The amount of time, expressed in milliseconds _(ms)_ passed since the previous gesture sent.
+2) **Timing frame**: The amount of time, expressed in milliseconds _(ms)_ passed since the previous serial packet.
 
 <p align="center">
 <img src=/imgs/packet_struct.png>
