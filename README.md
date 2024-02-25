@@ -58,7 +58,7 @@ The real-time requirements of the application were validated on high-end NVIDIA-
 
 <p>
  <img align="left" width="350" src="/imgs/nvidia_rtx.png" />
- <img align="right" width="450" src="/imgs/agx.png">
+ <img align="right" width="350" src="/imgs/agx.png">
 </p>
 
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
