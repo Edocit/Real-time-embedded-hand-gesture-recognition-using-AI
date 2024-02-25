@@ -45,7 +45,7 @@ The application includes the possibility to enable different PHY communication c
 
 In particular, the first byte of the packet is always the class prediction, while the second is the timestamp measured at the end of the **Post-processing subsystem**, so before the serial "composite frame" is sent. (see previous section).
 
-The use of tehe above serial frame allows the communication with external devices, which using the timestamp, can detect __gestures combo__. An example of a serial framing is reported in the figure below 
+The use of the just described serial frame allows the communication with external devices, which using the timestamp, can detect __gestures combo__. An example of a serial framing is reported in the figure below 
 
 <p align="center">
 <img src=/imgs/packet_burst.png>
