@@ -3,9 +3,7 @@
 
  This project provides a real-time implementation of three neural networks used to detect 18 different hand gestures. The 3 provided models are **ResNet-50**, **MobileNet-v3**, and **Inception-v3**.
 
-
-
-
+<br  />
 <p align="center">
  <img align="center" width="700" src=/imgs/demo.gif>
 </p>
