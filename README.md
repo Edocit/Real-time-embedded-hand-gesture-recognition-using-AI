@@ -57,10 +57,13 @@ The application was structured to meet **real-time constraints**, which in the c
 
 <h2>Supported platforms</h2>
 The real-time requirements of the application were validated on high-end NVIDIA-RTX GPUs and for AGX Xavier, AGX Orin, TX2 embedded Single Board Computers (SBCs).
+
+<div>
 <p>
  <img align="left" width="350" src="/imgs/nvidia_rtx.png" />
  <img align="right" width="550" src="/imgs/agx.png">
 </p>
+</div>
 
 
 
