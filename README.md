@@ -11,7 +11,7 @@
 </p>
 
 
-One additional "No gesture" class is added in the application to consistently handle uncertain positions or transition frames between different gestures 
+One additional "No gesture" class is added in the application to consistently handle uncertain positions or transitions between different gestures 
 
 <h2>Dataset</h2>
 <p align="center">
