@@ -1,7 +1,8 @@
 # Real-time embedded hand gesture recognition using AI
-<img align="right" width="200" src="imgs/logo_leonardo.png" />
+<img align="right" width="400" src="imgs/logo_leonardo.png" />
 
  This project provides a real-time implementation of three neural networks used to detect 18 different hand gestures
+
 
 <img align="center" src=/imgs/demo.gif>
 One additional "No gesture" class is added in the application to consistently handle uncertain positions or transition frames between different gestures 
