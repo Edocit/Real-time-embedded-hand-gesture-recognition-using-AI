@@ -2,6 +2,7 @@
 <img align="right" width="300" src="imgs/logo_leonardo.png" />
 
  This project provides a real-time implementation of three neural networks used to detect 18 different hand gestures.
+ 
  The 3 provided models are:
  1) ResNet-50
  2) MobileNet-v3
