@@ -1,9 +1,7 @@
 # Real-time embedded hand gesture recognition using AI
 <img align="right" width="300" src="imgs/logo_leonardo.png" />
 
- This project provides a real-time implementation of three neural networks used to detect 18 different hand gestures.
- 
- The 3 provided models are **ResNet-50**, **MobileNet-v3**, and **Inception-v3**.
+ This project provides a real-time implementation of three neural networks used to detect 18 different hand gestures. The 3 provided models are **ResNet-50**, **MobileNet-v3**, and **Inception-v3**.
 
 
 
