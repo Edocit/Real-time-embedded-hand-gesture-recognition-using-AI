@@ -81,8 +81,7 @@ python3 application.py resnet50 80 recorded_video.avi /dev/ttyUSB@ #-> **Please 
 2) Make sure that the computer on which you want to run the code 
 has a cuda version installed that is no lower than 11.8
 
-You can find installation guide at this link
-https://developer.nvidia.com/cuda-11-8-0-download-archive 
+You can find installation guide <a href="https://developer.nvidia.com/cuda-11-8-0-download-archive">here</a>. 
 
 3) Create a virtual environment using the command:    python3 -m venv rtai_env
 4) Activate the environment using the command:        source rtai_env/bin/activate
