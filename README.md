@@ -67,6 +67,15 @@ The real-time requirements of the application were validated on high-end NVIDIA-
 
 <h2>Instructions</h2>
 
+You can directly copy and paste in a terminal the code snippet repoted below. However each step is better explained in this section.
+
+```python
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+
+
 1) Clone this repo
 2) Make sure that the computer on which you want to run the code 
 has a cuda version installed that is no lower than 11.8
