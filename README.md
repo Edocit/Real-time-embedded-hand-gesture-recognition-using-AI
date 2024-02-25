@@ -30,5 +30,10 @@ The application includes the possibility to enable different PHY communication c
    
 <img src=/imgs/packet_struct.png>
 
-In particular, the first byte of the packet is always the class prediction, while the second is the timestamp measured at the end of the **Post-processing subsystem** (see previous section).
+In particular, the first byte of the packet is always the class prediction, while the second is the timestamp measured at the end of the **Post-processing subsystem**, so before the serial "composite frame" is sent. (see previous section).
+
+The use of tehe above serial frame allows the communication with external devices, which using the timestamp, can detect __gestures combo__. An example of a serial framing is reported in the figure below 
+
 <img src=/imgs/packet_burst.png>
+
+The application was structured to meet **real-time constraints**, which in the case of camera-based applications most of the time corresponds to a processing time of 34 milliseconds (30 FPS) for each frame. However, if any error occurs, and the timestamp exceeds 255 ms, the 255 value is held until its transmission.  
