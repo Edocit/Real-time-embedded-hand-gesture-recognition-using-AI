@@ -62,3 +62,28 @@ The real-time requirements of the application were validated on high-end NVIDIA-
  <img align="right" width="550" src="/imgs/agx.png">
 </p>
 
+
+
+<h2>Instructions</h2>
+
+1) Clone this repo
+2) Make sure that the computer on which you want to run the code 
+has a cuda version installed that is no lower than 11.8
+
+You can find installation guide at this link
+https://developer.nvidia.com/cuda-11-8-0-download-archive 
+
+3) Create a virtual environment using the command:    python3 -m venv rtai_env
+4) Activate the environment using the command:        source rtai_env/bin/activate
+5) Install the requirements using the command:	       pip install -r setup/requirements.txt
+6) Change dicrectory using the command:		             cd ../code/
+7) If using Linux grant permissions to the serial port using the command :  sudo chmod 777 /dev/ttyUSB# -> **Please be sure to replace "#"** with the number of the desired serial
+   
+8) Run the code using the command:		      python3 application.py resnet50 80 recorded_video.avi /dev/ttyUSB#
+        IMPORTANT:
+                    First  parameter    : the chosen neural network: can be resnet50, mobilenetv3, inceptionv3
+                    Second parameter    : the threshold score expressed in the range [0, 100]
+                    Thrid  parameter    : the name for the recorded video saved in the "recordings" directory
+                    Fourth parameter    : the name of the serial port desierd for the communication. **Please be sure to replace "#"** with the number of the desired serial
+
+
