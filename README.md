@@ -65,7 +65,7 @@ The real-time requirements of the application were validated on high-end NVIDIA-
 
 <h2>Instructions</h2>
 
-You can directly copy and paste in a terminal the code snippet repoted below. However each step is better explained in this section.
+You can directly copy and paste in a terminal the code snippet reported below.
 
 ```bash
 export SERIAL="/dev/ttyUSB0" #make sure to set the correct name of the serial 
@@ -77,6 +77,7 @@ sudo chmod 777 $SERIAL
 python3 application.py resnet50 80 recorded_video.avi $SERIAL
 ```
 
+Each step is better explained below:
 
 1) Clone this repo
 2) Make sure that the computer on which you want to run the code 
