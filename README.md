@@ -66,6 +66,7 @@ The real-time requirements of the application were validated on high-end NVIDIA-
 <h2>Instructions</h2>
 
 You can directly copy and paste in a terminal the code snippet reported below.
+**IMPORTANT REQUIREMENT**: Make sure to have a cuda version no older than 11.8 installed on your machine. You can find installation guide <a href="https://developer.nvidia.com/cuda-11-8-0-download-archive">
 
 ```bash
 export SERIAL="/dev/ttyUSB0" #make sure to set the correct name of the serial 
