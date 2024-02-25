@@ -92,10 +92,10 @@ https://developer.nvidia.com/cuda-11-8-0-download-archive
    
 8) Run the code using the command:		      python3 application.py resnet50 80 recorded_video.avi /dev/ttyUSB@
    <br  />
-        IMPORTANT:
-                    First  parameter    : the chosen neural network: can be resnet50, mobilenetv3, inceptionv3 <br  />
-                    Second parameter    : the threshold score expressed in the range [0, 100] <br  />
-                    Thrid  parameter    : the name for the recorded video saved in the "recordings" directory <br  />
-                    Fourth parameter    : the name of the serial port desierd for the communication. **Please be sure to replace "@"** with the number of the desired serial
+        **IMPORTANT**:<br  />
+                  &emsp;  **First  parameter**    : the chosen neural network: can be resnet50, mobilenetv3, inceptionv3 <br  />
+                  &emsp;  **Second parameter**    : the threshold score expressed in the range [0, 100] <br  />
+                  &emsp;  **Thrid  parameter**    : the name for the recorded video saved in the "recordings" directory <br  />
+                  &emsp;  **Fourth parameter**    : the name of the serial port desierd for the communication. **Please be sure to replace "@"** with the number of the desired serial
 
 
