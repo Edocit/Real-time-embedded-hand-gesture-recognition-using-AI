@@ -67,13 +67,14 @@ The real-time requirements of the application were validated on high-end NVIDIA-
 
 You can directly copy and paste in a terminal the code snippet repoted below. However each step is better explained in this section.
 
-```python
+```bash
+export SERIAL="/dev/ttyUSB0" #make sure to set the correct name of the serial 
 python3 -m venv rtai_env
 source rtai_env/bin/activate
 pip install -r setup/requirements.txt
 cd ../code/
-sudo chmod 777 /dev/ttyUSB@ #-> **Please be sure to replace "@"** with the number of the desired serial
-python3 application.py resnet50 80 recorded_video.avi /dev/ttyUSB@ #-> **Please be sure to replace "@"** with the number of the desired serial
+sudo chmod 777 $SERIAL 
+python3 application.py resnet50 80 recorded_video.avi $SERIAL
 ```
 
 
