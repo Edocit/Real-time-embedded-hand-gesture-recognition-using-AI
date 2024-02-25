@@ -96,6 +96,6 @@ https://developer.nvidia.com/cuda-11-8-0-download-archive
                  &emsp; &emsp; &emsp; &emsp;  **First  parameter**    : the chosen neural network: can be resnet50, mobilenetv3, inceptionv3 <br  />
                  &emsp; &emsp; &emsp; &emsp;  **Second parameter**    : the threshold score expressed in the range [0, 100] <br  />
                  &emsp; &emsp; &emsp; &emsp;  **Thrid  parameter**    : the name for the recorded video saved in the "recordings" directory <br  />
-                 &emsp; &emsp; &emsp; &emsp;  **Fourth parameter**    : the serial port desierd for the communication. **Please be sure to replace "@"** with the number of the desired serial
+                 &emsp; &emsp; &emsp; &emsp;  **Fourth parameter**    : the serial port desierd for the communication. **Be sure to replace "@"** with the desired serial number
 
 
