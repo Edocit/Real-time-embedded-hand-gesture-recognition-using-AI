@@ -63,7 +63,7 @@ The real-time requirements of the application were validated on high-end NVIDIA-
 </p>
 
 
-
+------------------
 <h2>Instructions</h2>
 
 1) Clone this repo
