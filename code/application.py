@@ -11,11 +11,30 @@ import HandTrackingModule as htm
 from ResNet50 import *
 import sys
 import os
+import serial
+from serial import Serial
 
 
 mpHands = mp.solutions.hands
 hands = mpHands.Hands()
 mpDraw = mp.solutions.drawing_utils
+
+serial_port = sys.argv[4]
+
+
+
+try:
+	ser = Serial(
+	   port=serial_port,
+	   baudrate=9600,
+	   parity=serial.PARITY_NONE,
+	   stopbits=serial.STOPBITS_ONE,
+	   bytesize=serial.EIGHTBITS
+	)
+except:
+	print('Cannot open serial.\nIf on Linux ensure you have run "sudo chmod 777 '+ serial_port + '"')
+
+
 
 model = None
 
@@ -34,15 +53,6 @@ time.sleep(3)
 
 classes = ["call", "dislike", "fist", "four", "like", "mute", "ok", "one", "palm", 
            "peace", "peace inverted", "rock", "stop", "stop inverted", "three", "three2", "two up", "two up inverted"] 
-
-
-def softmax(vector):
-    e = np.exp(vector)
-    val = e / e.sum()
-
-    a = [round(x,4) for x in val]
-
-    return a
 
 
 
@@ -78,6 +88,37 @@ handLms = []
 TOL = 3
 
 flag = 0
+
+serial_time = 0
+
+
+'''
+This function takes the PHY serial port to be used "port", 
+the insformation to send "pld", and the time of the last sent gesture
+'''
+def serial_tx(port, pld, prev_time):
+	port.write(pld.to_bytes(1, "big"))
+	actual_time = time.time()
+	timestap = int((actual_time- prev_time)*1000)
+	
+	return actual_time
+
+	
+	
+
+
+
+def softmax(vector):
+    e = np.exp(vector)
+    val = e / e.sum()
+
+    a = [round(x,4) for x in val]
+
+    return a
+
+
+
+
 
 while(True):
     start = time.time()
@@ -161,8 +202,6 @@ while(True):
             cap.release()
             break
 
-        #print("TIME", (time.time() - start)*1000)
-        #while( (time.time() - start)*1000 < 34): print("ciao")
 
     else:
         break
@@ -170,16 +209,4 @@ while(True):
 result.release() 
 cap.release()
 cv2.destroyAllWindows()
-#for i in range(len(inference_time)):
-#    avg_ingerence_time += inference_time[i]
-#    if(inference_time[i] < best_inference_time):  best_inference_time  = inference_time[i]
-#    if(inference_time[i] > worst_inference_time): worst_inference_time = inference_time[i]
 
-#avg_ingerence_time /= len(inference_time)
-
-# print("Test runtime InceptionV3")
-# print("------------------------------------")
-# print("Samples:", len(inference_time))
-# print("Worst inference:", round(worst_inference_time, 3), "ms")
-# print("Avg inference:", round(avg_ingerence_time, 3), "ms")
-# print("Best inference:", round(best_inference_time, 3), "ms")
