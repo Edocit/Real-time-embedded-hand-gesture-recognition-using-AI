@@ -37,7 +37,7 @@ _Notice that in GPU-accelerated systems, like the one used in this project, the 
 
 The application includes the possibility to enable different PHY communication channels, including **serial ports** supporting the **RS-232** standard. The transmission mode of the serial port is **fully configurable**, however, the default setting is 8N1 (8 bit of data, no parity, and one stop bit). The data frame generated and transmitted by the application, shown bleow, consists in two bytes:
 1) **Detected class**: The class detected by the neural network. It is expressed as a byte.
-2) **Timing frame**: The amount of time, expressed in milliseconds _(ms)_ passed since the previous gesture sent.
+2) **Timing frame**: The amount of time, expressed in milliseconds _(ms)_ passed since the previous serial packet.
 
 <p align="center">
 <img src=/imgs/packet_struct.png>
@@ -45,27 +45,28 @@ The application includes the possibility to enable different PHY communication c
 
 In particular, the first byte of the packet is always the class prediction, while the second is the timestamp measured at the end of the **Post-processing subsystem**, so before the serial "composite frame" is sent. (see previous section).
 
-The use of tehe above serial frame allows the communication with external devices, which using the timestamp, can detect __gestures combo__. An example of a serial framing is reported in the figure below 
+The use of the just described serial frame allows the communication with external devices, which using the timestamp, can detect __gestures combo__. An example of a serial framing is reported in the figure below 
 
 <p align="center">
 <img src=/imgs/packet_burst.png>
 </p>
 
-The application was structured to meet **real-time constraints**, which in the case of camera-based applications most of the time corresponds to a processing time of 34 milliseconds (30 FPS) for each frame. However, if any error occurs, and the timestamp exceeds 255 ms, the 255 value is held until its transmission.  
+The application was structured to meet **real-time constraints**, which in the case of camera-based applications most of the time corresponds to a processing time of 34 milliseconds for each frame (30 FPS). However, if any error occurs, and the timestamp exceeds 255 ms, the 255 value is held until its transmission.  
 
 <h2>Supported platforms</h2>
 The real-time requirements of the application were validated on high-end NVIDIA-RTX GPUs and for AGX Xavier, AGX Orin, TX2 embedded Single Board Computers (SBCs).
 
 <p>
  <img align="left" width="350" src="/imgs/nvidia_rtx.png" />
- <img align="right" width="550" src="/imgs/agx.png">
+ <img align="right" width="380" src="/imgs/agx.png">
 </p>
 
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 <h2>Instructions</h2>
 
-You can directly copy and paste in a terminal the code snippet repoted below. However each step is better explained in this section.
+You can directly copy and paste in a terminal the code snippet reported below.<br  /><br  />
+**IMPORTANT REQUIREMENT**: Make sure to have a cuda version no older than 11.8 installed on your machine. You can find installation guide <a href="https://developer.nvidia.com/cuda-11-8-0-download-archive">here</a>. You can check the CUDA version any time executing the command nvidia-smi.
 
 ```bash
 export SERIAL="/dev/ttyUSB0" #make sure to set the correct name of the serial 
@@ -77,20 +78,16 @@ sudo chmod 777 $SERIAL
 python3 application.py resnet50 80 recorded_video.avi $SERIAL
 ```
 
+Each step is better explained below:
 
-1) Clone this repo
-2) Make sure that the computer on which you want to run the code 
-has a cuda version installed that is no lower than 11.8
-
-You can find installation guide <a href="https://developer.nvidia.com/cuda-11-8-0-download-archive">here</a>. 
-
-3) Create a virtual environment using the command:    python3 -m venv rtai_env
-4) Activate the environment using the command:        source rtai_env/bin/activate
-5) Install the requirements using the command:	       pip install -r setup/requirements.txt
-6) Change dicrectory using the command:		             cd ../code/
-7) If using Linux grant permissions to the serial port using the command :  sudo chmod 777 /dev/ttyUSB@ -> **Please be sure to replace "@"** with the number of the desired serial
-   
-8) Run the code using the command:		      python3 application.py resnet50 80 recorded_video.avi /dev/ttyUSB@
+&emsp; 1) Clone this repo<br />
+&emsp; 2) Make sure to have a cuda version no older than 11.8. You can find installation guide <a href="https://developer.nvidia.com/cuda-11-8-0-download-archive">here</a>.<br />
+&emsp; 3) Create a virtual environment:    python3 -m venv rtai_env<br />
+&emsp; 4) Activate the environment:        source rtai_env/bin/activate<br />
+&emsp; 5) Install the requirements:	       pip install -r setup/requirements.txt<br />
+&emsp; 6) Change dicrectory:		             cd ../code/<br />
+&emsp; 7) In Linux grant permissions to the serial port: sudo chmod 777 /dev/ttyUSB@ -> **Replace "@"** with the number of the desired serial<br />
+&emsp; 8) Run the code using the command:		      python3 application.py resnet50 80 recorded_video.avi /dev/ttyUSB@
    <br  /> <br  />
         &emsp; **IMPORTANT**<br  /> <br  />
                  &emsp; &emsp; &emsp; &emsp;  **First  parameter**    : the chosen neural network: can be resnet50, mobilenetv3, inceptionv3 <br  />
