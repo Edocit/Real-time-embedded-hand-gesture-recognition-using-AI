@@ -11,6 +11,7 @@
 
 One additional "No gesture" class is added in the application to consistently handle uncertain positions or transitions between different gestures 
 
+<br /><br />
 <h2>Instructions</h2>
 
 You can directly copy and paste in a terminal the code snippet reported below.<br  /><br  />
@@ -97,8 +98,6 @@ The real-time requirements of the application were validated on high-end NVIDIA-
  <img align="left" width="350" src="/imgs/nvidia_rtx.png" />
  <img align="right" width="380" src="/imgs/agx.png">
 </p>
-
-<br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 
 
