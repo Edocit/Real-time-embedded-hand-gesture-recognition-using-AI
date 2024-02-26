@@ -67,8 +67,9 @@ avg_ingerence_time = 0
 
 
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+cap.set(cv2.CAP_PROP_FPS, 30)
 
 SCALE = 1
 frame_width = int(640 * SCALE)
@@ -207,7 +208,7 @@ while(True):
             res = classes[final_res]
 
 
-        cv2.putText(frame_copy, res + "  " + str(timestamp), (10,30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+        cv2.putText(frame_copy, res, (10,30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
 
         if flag == 1:
         	mpDraw.draw_landmarks(frame_copy,handLms,mpHands.HAND_CONNECTIONS)
