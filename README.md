@@ -11,7 +11,7 @@
 
 One additional "No gesture" class is added in the application to consistently handle uncertain positions or transitions between different gestures 
 
-<br /><br />
+<br />
 <h2>Instructions</h2>
 
 You can directly copy and paste in a terminal the code snippet reported below.<br  /><br  />
