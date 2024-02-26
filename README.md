@@ -84,7 +84,7 @@ The use of the just described serial frame allows the communication with externa
 <img src=/imgs/packet_burst.png>
 </p>
 
-The application was structured to meet **real-time constraints**, which in the case of camera-based applications most of the time corresponds to a processing time of 34 milliseconds for each frame (30 FPS). However, if any error occurs, and the timestamp exceeds 255 ms, the 255 value is held until its transmission. In the animation below the timestamp measure is affected by several different extra factors including screen and audio recording, maximum details for the graphical user interface (GUI), and hand key points rendering. All of them does not allow for real-time processing, which is definitely possible under the normal operating conditions.
+The application was structured to meet **real-time constraints**, which in the case of camera-based applications most of the time corresponds to a processing time of 34 milliseconds for each frame (30 FPS). However, if any error occurs, and the timestamp exceeds 255 ms, the 255 value is held until its transmission. In the animation below the timestamp measure is affected by several different extra factors including screen and audio recording, maximum details for the graphical user interface (GUI), and hand key points rendering. Enabling all these features together does not allow for real-time processing in the strict meaning of the term, which is indeed possible under normal operating conditions.
 
 <p align="center">
  <img align="center" width="700" src=/imgs/serial.gif>
