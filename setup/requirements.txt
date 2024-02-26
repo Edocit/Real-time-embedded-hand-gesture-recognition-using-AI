@@ -12,3 +12,4 @@ mediapipe
 keyboard 
 pandas
 tqdm
+pyserial

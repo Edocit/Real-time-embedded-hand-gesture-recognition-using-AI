@@ -21,15 +21,15 @@ mpDraw = mp.solutions.drawing_utils
 
 serial_port = sys.argv[4]
 
-
+print("Acceleration device:", torch.cuda.get_device_name(0))
 
 try:
 	ser = Serial(
 	   port=serial_port,
 	   baudrate=9600,
+       bytesize=serial.EIGHTBITS,
 	   parity=serial.PARITY_NONE,
-	   stopbits=serial.STOPBITS_ONE,
-	   bytesize=serial.EIGHTBITS
+	   stopbits=serial.STOPBITS_ONE
 	)
 except:
 	print('Cannot open serial.\nIf on Linux ensure you have run "sudo chmod 777 '+ serial_port + '"')
@@ -67,9 +67,9 @@ cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
-SCALE = 2
-frame_width = 640 * SCALE
-frame_height = 480 * SCALE
+SCALE = 0.8
+frame_width = int(640 * SCALE)
+frame_height = int(480 * SCALE)
    
 size = (frame_width, frame_height) 
 result = cv2.VideoWriter("../recordings/"+sys.argv[3], cv2.VideoWriter_fourcc(*'MJPG'), 20, size) 
