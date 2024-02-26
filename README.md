@@ -11,6 +11,38 @@
 
 One additional "No gesture" class is added in the application to consistently handle uncertain positions or transitions between different gestures 
 
+<h2>Instructions</h2>
+
+You can directly copy and paste in a terminal the code snippet reported below.<br  /><br  />
+**IMPORTANT REQUIREMENT**: Make sure to have a cuda version no older than 11.8 installed on your machine. You can find installation guide <a href="https://developer.nvidia.com/cuda-11-8-0-download-archive">here</a>. You can check the CUDA version any time executing the command nvidia-smi.
+
+```bash
+export SERIAL="/dev/ttyUSB0" #make sure to set the correct name of the serial 
+python3 -m venv rtai_env
+source rtai_env/bin/activate
+pip install -r setup/requirements.txt
+cd ../code/
+sudo chmod 777 $SERIAL 
+python3 application.py resnet50 80 recorded_video.avi $SERIAL
+```
+
+Each step is better explained below:
+
+&emsp; 1) Clone this repo<br />
+&emsp; 2) Make sure to have a cuda version no older than 11.8. You can find installation guide <a href="https://developer.nvidia.com/cuda-11-8-0-download-archive">here</a>.<br />
+&emsp; 3) Create a virtual environment:    python3 -m venv rtai_env<br />
+&emsp; 4) Activate the environment:        source rtai_env/bin/activate<br />
+&emsp; 5) Install the requirements:	       pip install -r setup/requirements.txt<br />
+&emsp; 6) Change dicrectory:		             cd ../code/<br />
+&emsp; 7) In Linux grant permissions to the serial port: sudo chmod 777 /dev/ttyUSB@ -> **Replace "@"** with the number of the desired serial<br />
+&emsp; 8) Run the code using the command:		      python3 application.py resnet50 80 recorded_video.avi /dev/ttyUSB@
+   <br  /> <br  />
+        &emsp; **IMPORTANT**<br  /> <br  />
+                 &emsp; &emsp; &emsp; &emsp;  **First  parameter**    : the chosen neural network: can be resnet50, mobilenetv3, inceptionv3 <br  />
+                 &emsp; &emsp; &emsp; &emsp;  **Second parameter**    : the threshold score expressed in the range [0, 100] <br  />
+                 &emsp; &emsp; &emsp; &emsp;  **Thrid  parameter**    : the name for the recorded video saved in the "recordings" directory <br  />
+                 &emsp; &emsp; &emsp; &emsp;  **Fourth parameter**    : the name of the serial port. **Be sure to replace "@"** with the desired serial number
+
 <h2>Dataset</h2>
 <p align="center">
  <img align="center" src=/imgs/hagrid_gestures.png>
@@ -68,36 +100,6 @@ The real-time requirements of the application were validated on high-end NVIDIA-
 
 <br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-<h2>Instructions</h2>
 
-You can directly copy and paste in a terminal the code snippet reported below.<br  /><br  />
-**IMPORTANT REQUIREMENT**: Make sure to have a cuda version no older than 11.8 installed on your machine. You can find installation guide <a href="https://developer.nvidia.com/cuda-11-8-0-download-archive">here</a>. You can check the CUDA version any time executing the command nvidia-smi.
-
-```bash
-export SERIAL="/dev/ttyUSB0" #make sure to set the correct name of the serial 
-python3 -m venv rtai_env
-source rtai_env/bin/activate
-pip install -r setup/requirements.txt
-cd ../code/
-sudo chmod 777 $SERIAL 
-python3 application.py resnet50 80 recorded_video.avi $SERIAL
-```
-
-Each step is better explained below:
-
-&emsp; 1) Clone this repo<br />
-&emsp; 2) Make sure to have a cuda version no older than 11.8. You can find installation guide <a href="https://developer.nvidia.com/cuda-11-8-0-download-archive">here</a>.<br />
-&emsp; 3) Create a virtual environment:    python3 -m venv rtai_env<br />
-&emsp; 4) Activate the environment:        source rtai_env/bin/activate<br />
-&emsp; 5) Install the requirements:	       pip install -r setup/requirements.txt<br />
-&emsp; 6) Change dicrectory:		             cd ../code/<br />
-&emsp; 7) In Linux grant permissions to the serial port: sudo chmod 777 /dev/ttyUSB@ -> **Replace "@"** with the number of the desired serial<br />
-&emsp; 8) Run the code using the command:		      python3 application.py resnet50 80 recorded_video.avi /dev/ttyUSB@
-   <br  /> <br  />
-        &emsp; **IMPORTANT**<br  /> <br  />
-                 &emsp; &emsp; &emsp; &emsp;  **First  parameter**    : the chosen neural network: can be resnet50, mobilenetv3, inceptionv3 <br  />
-                 &emsp; &emsp; &emsp; &emsp;  **Second parameter**    : the threshold score expressed in the range [0, 100] <br  />
-                 &emsp; &emsp; &emsp; &emsp;  **Thrid  parameter**    : the name for the recorded video saved in the "recordings" directory <br  />
-                 &emsp; &emsp; &emsp; &emsp;  **Fourth parameter**    : the name of the serial port. **Be sure to replace "@"** with the desired serial number
 
 
