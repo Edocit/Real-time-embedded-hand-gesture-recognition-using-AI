@@ -50,7 +50,7 @@ Each step is better explained below:
 &emsp; 7) In Linux grant permissions: sudo chmod 777 /dev/ttyUSB@ -> **Replace "@"** with the correct number<br />
 &emsp; 8) Run the code using the command:		      python3 application.py resnet50 80 recorded_video.avi serial_name
    <br  /> <br  />
-        &emsp; **IMPORTANT**<br  /> <br  />
+        &emsp; **IMPORTANT**<br  /> 
                  &emsp; &emsp; &emsp; &emsp;  **First  parameter**    : the chosen neural network: can be resnet50, mobilenetv3, inceptionv3 <br  />
                  &emsp; &emsp; &emsp; &emsp;  **Second parameter**    : the threshold score expressed in the range [0, 100] <br  />
                  &emsp; &emsp; &emsp; &emsp;  **Thrid  parameter**    : the name for the recorded video saved in the "recordings" directory <br  />
