@@ -17,7 +17,7 @@ One additional "No gesture" class is added in the application to consistently ha
 You can directly copy and paste in a terminal the code snippet reported below.<br  /><br  />
 **IMPORTANT REQUIREMENT**: Make sure to have a cuda version no older than 11.8 installed on your machine. You can find installation guide <a href="https://developer.nvidia.com/cuda-11-8-0-download-archive">here</a>. You can check the CUDA version any time executing the command nvidia-smi.
 
-If using linux use the following snippet
+If using Linux use the following snippet
 
 ```bash
 export SERIAL="/dev/ttyUSB0" #make sure to set the correct name of the serial 
