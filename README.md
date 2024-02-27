@@ -47,7 +47,7 @@ Each step is better explained below:
 &emsp; Activate the environment:        source rtai_env/bin/activate<br />
 &emsp; 5) Install the requirements:	       pip install -r setup/requirements.txt<br />
 &emsp; 6) Change dicrectory:		             cd ../code/<br />
-&emsp; 7) In Linux grant permissions to the serial port: sudo chmod 777 /dev/ttyUSB@ -> **Replace "@"** with the number of the desired serial<br />
+&emsp; 7) In Linux grant permissions to the serial: sudo chmod 777 /dev/ttyUSB@ -> **Replace "@"** with the correct number<br />
 &emsp; 8) Run the code using the command:		      python3 application.py resnet50 80 recorded_video.avi serial_name
    <br  /> <br  />
         &emsp; **IMPORTANT**<br  /> <br  />
