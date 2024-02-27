@@ -19,7 +19,7 @@ You can directly copy and paste in a terminal the code snippet reported below.<b
 
 If using Linux use the following snippet
 
-```bash
+```cmd
 export SERIAL="/dev/ttyUSB0" #make sure to set the correct name of the serial 
 python3 -m venv rtai_env
 source rtai_env/bin/activate
