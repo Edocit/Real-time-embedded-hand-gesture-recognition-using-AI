@@ -48,13 +48,13 @@ Each step is better explained below:
 &emsp; 5) Install the requirements:	       pip install -r setup/requirements.txt<br />
 &emsp; 6) Change dicrectory:		             cd ../code/<br />
 &emsp; 7) In Linux grant permissions to the serial port: sudo chmod 777 /dev/ttyUSB@ -> **Replace "@"** with the number of the desired serial<br />
-&emsp; 8) Run the code using the command:		      python3 application.py resnet50 80 recorded_video.avi /dev/ttyUSB@
+&emsp; 8) Run the code using the command:		      python3 application.py resnet50 80 recorded_video.avi serial_name
    <br  /> <br  />
         &emsp; **IMPORTANT**<br  /> <br  />
                  &emsp; &emsp; &emsp; &emsp;  **First  parameter**    : the chosen neural network: can be resnet50, mobilenetv3, inceptionv3 <br  />
                  &emsp; &emsp; &emsp; &emsp;  **Second parameter**    : the threshold score expressed in the range [0, 100] <br  />
                  &emsp; &emsp; &emsp; &emsp;  **Thrid  parameter**    : the name for the recorded video saved in the "recordings" directory <br  />
-                 &emsp; &emsp; &emsp; &emsp;  **Fourth parameter**    : the name of the serial port. **Be sure to replace "@"** with the desired serial number
+                 &emsp; &emsp; &emsp; &emsp;  **Fourth parameter**    : the name of the serial port. **Be sure to replace it** with the desired serial number
 
 <h2>Dataset</h2>
 <p align="center">
