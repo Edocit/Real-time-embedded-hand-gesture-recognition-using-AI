@@ -31,7 +31,7 @@ python3 application.py resnet50 80 recorded_video.avi $SERIAL
 If using Windows use this one
 
 ```bash
-setx SERIAL="COM0" #make sure to set the correct name of the serial 
+set SERIAL="COM0" #make sure to set the correct name of the serial 
 python3 -m venv rtai_env
 source rtai_env/bin/activate
 pip install -r setup/requirements.txt
